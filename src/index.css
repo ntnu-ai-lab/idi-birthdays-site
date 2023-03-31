@@ -1,0 +1,29 @@
+@font-face {
+  font-family: 'source-code-pro';
+  src: url('./assets/fonts/SourceCodePro-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+/* @font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('./assets/fonts/OpenSans-Italic.ttf') format('truetype');
+} */
+
+body {
+  margin: 0;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Open Sans', 'Open Sans Italic', sans-serif;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
