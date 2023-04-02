@@ -8,15 +8,18 @@ import { setDoc, doc } from 'firebase/firestore';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-// progress
 import { LinearProgress } from '@mui/material';
+import { Box } from '@mui/system';
+
+// birthday emoji
+const defImg = "https://firebasestorage.googleapis.com/v0/b/idi-birthday.appspot.com/o/images%2F2023-04-01T14%3A43%3A30.405Z.png?alt=media&token=8639982f-f16c-4299-8f97-4af345c3bacf"
 
 const BdayDialog = () => {
     const [open, setOpen] = useState(false);
     const [name, setName] = useState('');
     // set default date value to 01.01.1970
     const [date, setDate] = useState(null);
-    const [imgUrl, setImgUrl] = useState('');
+    const [imgUrl, setImgUrl] = useState(defImg);
     const [uploading, setUploading] = useState(false);
 
     const image = useImageClip();
@@ -70,12 +73,11 @@ const BdayDialog = () => {
                         display: 'flex',
                         flexDirection: 'column',
                         gap: '20px',
+                        justifyContent: 'center',
+                        alignContent: 'center',
                     }}
                 >
                     <Typography variant="body1">Upload an image by pasting (ctrl/cmd + V)</Typography>
-                    {imgUrl && <img src={imgUrl} alt={name} />}
-                    {/* progress bar when uploading */}
-                    {uploading && <LinearProgress />}
                     <TextField
                         label="Name"
                         value={name}
@@ -86,6 +88,12 @@ const BdayDialog = () => {
                             setDate(newDate)
                         } />
                     </LocalizationProvider>
+                    {imgUrl && (
+                        <Box width={200} height='auto' m='auto'>
+                            <img src={imgUrl} alt={name} />
+                        </Box>
+                    )}
+                    {uploading && <LinearProgress />}
                 </DialogContent>
                 <DialogActions>
                     <Button type="submit" onClick={handleSubmit}>Create</Button>

@@ -1,6 +1,17 @@
 html, body {
-  background: #EDEDED;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
 }
+
+/* css helper to increase and shrink a piece of text */
+@keyframes grow {
+  0% { font-size: 1em; }
+  50% { font-size: 1.2em; }
+  100% { font-size: 1em; }
+}
+#grow {
+  animation: grow 1s ease-in-out infinite;
+}
+
 
 .App {
   min-height: 100vh;
