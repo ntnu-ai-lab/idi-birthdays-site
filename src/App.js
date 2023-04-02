@@ -158,7 +158,7 @@ const BirthdayList = ({ birthdays, isPast = false }) => {
               return (
                 <Grid item xs={12} key={birthday.name} mx={6}>
                   <Box sx={{ display: 'flex', justifyContent: 'center' }} m={1}>
-                    <BirthdayCard birthday={birthday} id='ntnu-light' ageText={ageText} />
+                    <BirthdayCard birthday={birthday} id='ntnu-light' ageText={ageText} onDelete={() => onDeleteBirthday(birthday.id)} />
                   </Box>
                 </Grid>
               )
